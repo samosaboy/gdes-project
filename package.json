@@ -1,0 +1,31 @@
+{
+  "name": "gdes_project_website",
+  "version": "1.0.0",
+  "description": "3rd year GDes Project for Karin's class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "author": "Nikunj Varshney",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/montybird/gdes-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/montybird/gdes-project/issues"
+  },
+  "homepage": "https://github.com/montybird/gdes-project#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^0.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "livereload-js": "^2.2.2"
+  }
+}
