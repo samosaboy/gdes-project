@@ -1,20 +1,111 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700");
+/*
+  (TEXT) PARAMS
+  =================
+  1. Namespace
+  2. Intensity
+  3. Text color
+  4. Background color (flat)
+  5. Highlight #1 color
+  6. Highlight #2 color
+  7. Width (px)
+  8. Height (px)
+*/
 body, html, table, tr, td, tbody {
   padding: 0;
   margin: 0; }
 
 body {
-  font-family: 'Source Code Pro', sans-serif; }
+  font-family: 'Source Code Pro', sans-serif;
+  overflow: hidden; }
 
 body, html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #252525;
+  background: #0c0c0c;
   color: #ffffff;
   height: 100%; }
 
 header {
-  text-align: center; }
+  margin: 11% 0 0 0; }
+  header #glitch {
+    display: none;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 35pt; }
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip: rect(97px, 1000px, 12px, 0); }
+  8.3333333333% {
+    clip: rect(75px, 1000px, 70px, 0); }
+  16.6666666667% {
+    clip: rect(50px, 1000px, 105px, 0); }
+  25% {
+    clip: rect(83px, 1000px, 50px, 0); }
+  33.3333333333% {
+    clip: rect(5px, 1000px, 35px, 0); }
+  41.6666666667% {
+    clip: rect(66px, 1000px, 80px, 0); }
+  50% {
+    clip: rect(12px, 1000px, 34px, 0); }
+  58.3333333333% {
+    clip: rect(69px, 1000px, 70px, 0); }
+  66.6666666667% {
+    clip: rect(11px, 1000px, 94px, 0); }
+  75% {
+    clip: rect(6px, 1000px, 112px, 0); }
+  83.3333333333% {
+    clip: rect(24px, 1000px, 51px, 0); }
+  91.6666666667% {
+    clip: rect(101px, 1000px, 9px, 0); }
+  100% {
+    clip: rect(86px, 1000px, 114px, 0); } }
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(5px, 1000px, 41px, 0); }
+  8.3333333333% {
+    clip: rect(115px, 1000px, 22px, 0); }
+  16.6666666667% {
+    clip: rect(108px, 1000px, 53px, 0); }
+  25% {
+    clip: rect(8px, 1000px, 27px, 0); }
+  33.3333333333% {
+    clip: rect(38px, 1000px, 90px, 0); }
+  41.6666666667% {
+    clip: rect(75px, 1000px, 21px, 0); }
+  50% {
+    clip: rect(14px, 1000px, 111px, 0); }
+  58.3333333333% {
+    clip: rect(76px, 1000px, 50px, 0); }
+  66.6666666667% {
+    clip: rect(26px, 1000px, 9px, 0); }
+  75% {
+    clip: rect(38px, 1000px, 106px, 0); }
+  83.3333333333% {
+    clip: rect(101px, 1000px, 53px, 0); }
+  91.6666666667% {
+    clip: rect(76px, 1000px, 46px, 0); }
+  100% {
+    clip: rect(31px, 1000px, 12px, 0); } }
+    header #glitch:before, header #glitch:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0c0c0c;
+      clip: rect(0, 0, 0, 0); }
+    header #glitch:after {
+      left: 2px;
+      text-shadow: -1px 0 red;
+      animation: glitch-anim-1 2s infinite linear alternate-reverse; }
+    header #glitch:before {
+      left: -2px;
+      text-shadow: 2px 0 blue;
+      animation: glitch-anim-2 3s infinite linear alternate-reverse; }
 
 main .hackframe {
   text-align: center; }
@@ -53,6 +144,26 @@ main .hackframe {
 #bar {
   width: 0%;
   height: 100vh;
-  background-color: aqua;
+  background-color: red;
   text-align: center;
-  color: black; }
+  color: black;
+  vertical-align: middle; }
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-family: 'Source Code Pro', sans-serif;
+  font-weight: 700;
+  font-size: 16pt;
+  padding: 0.5em;
+  cursor: pointer; }
+  button:hover {
+    background: white;
+    color: #0c0c0c; }
+  button:focus {
+    outline: 0; }

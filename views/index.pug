@@ -10,8 +10,10 @@ html(lang="en")
         script(src='tracking.js')
         script(src='face.js')
         script(src='stats.min.js')
+        script(src='https://l2.io/ip.js?var=userip')
 
     body
+
         include header
 
         div#progress
@@ -26,7 +28,7 @@ html(lang="en")
                     div.camerahack
                         canvas#canvas(width='960', height='720')
                         video#video(width='960', height='720', preload autoplay loop muted)
-                button#hack Begin Hack
+            button#hack Expose my computer
 
 
         include footer
