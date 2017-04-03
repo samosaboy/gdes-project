@@ -7,11 +7,15 @@ var path = require('path');
 app.get('/', function(req, res) {
     res.render('index', { title: 'Welcome' });
 });
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname));
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 app.locals.pretty = true
 app.use('/scripts', express.static(__dirname + '/node_modules/tracking/src/'));
+
+if (app.get('env') === 'development') {
+    app.locals.pretty = true;
+}
 
 // Set server port
 app.listen(4000);

@@ -103,7 +103,7 @@ header {
 
   #glitch {
     display:  none;
-    @include textGlitch("glitch", 12, white, $bgcolor, red, blue, 1000, 115);
+    @include textGlitch("glitch", 12, white, $bgcolor, red, blue, 1500, 115);
     text-align: center;
     font-size: 35pt;
   }
@@ -139,6 +139,7 @@ main {
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0;
 }
 
 #canvas {
@@ -163,7 +164,7 @@ main {
   vertical-align: middle;
 }
 
-button {
+button, #stophack {
   @include centerer;
   background: none;
   border: 2px solid white;
@@ -182,4 +183,19 @@ button {
   &:focus {
     outline: 0;
   }
+}
+
+#stophack  {
+  @include centerer;
+  background: none;
+  top: 90%;
+  border: 2px solid mediumspringgreen;
+  color: mediumspringgreen;
+  display: none;
+  z-index: 9999;
+
+  &:hover {
+    background: mediumspringgreen;
+  }
+
 }

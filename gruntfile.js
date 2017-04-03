@@ -13,11 +13,17 @@ module.exports = function(grunt) {
         pug: {
             compile: {
                 options: {
-                    pretty: true,
+                    data: {
+                        debug: false,
+                        pretty: true
+                    }
                 },
-                files: {
-                    'public/*.html' : ['views/*.pug']
-                }
+                files: [{
+                    src: '*.pug',
+                    dest: 'public/',
+                    expand: true,
+                    ext: '.html'
+                }]
             }
         },
         watch: {
@@ -40,5 +46,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-pug');
 
     // Default tasks
-    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['sass', 'pug']);
 }

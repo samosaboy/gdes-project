@@ -37,59 +37,59 @@ header {
 
 @keyframes glitch-anim-1 {
   0% {
-    clip: rect(97px, 1000px, 12px, 0); }
+    clip: rect(99px, 1500px, 51px, 0); }
   8.3333333333% {
-    clip: rect(75px, 1000px, 70px, 0); }
+    clip: rect(50px, 1500px, 12px, 0); }
   16.6666666667% {
-    clip: rect(50px, 1000px, 105px, 0); }
+    clip: rect(52px, 1500px, 93px, 0); }
   25% {
-    clip: rect(83px, 1000px, 50px, 0); }
+    clip: rect(4px, 1500px, 59px, 0); }
   33.3333333333% {
-    clip: rect(5px, 1000px, 35px, 0); }
+    clip: rect(91px, 1500px, 60px, 0); }
   41.6666666667% {
-    clip: rect(66px, 1000px, 80px, 0); }
+    clip: rect(75px, 1500px, 56px, 0); }
   50% {
-    clip: rect(12px, 1000px, 34px, 0); }
+    clip: rect(4px, 1500px, 36px, 0); }
   58.3333333333% {
-    clip: rect(69px, 1000px, 70px, 0); }
+    clip: rect(18px, 1500px, 70px, 0); }
   66.6666666667% {
-    clip: rect(11px, 1000px, 94px, 0); }
+    clip: rect(41px, 1500px, 94px, 0); }
   75% {
-    clip: rect(6px, 1000px, 112px, 0); }
+    clip: rect(29px, 1500px, 93px, 0); }
   83.3333333333% {
-    clip: rect(24px, 1000px, 51px, 0); }
+    clip: rect(55px, 1500px, 59px, 0); }
   91.6666666667% {
-    clip: rect(101px, 1000px, 9px, 0); }
+    clip: rect(105px, 1500px, 61px, 0); }
   100% {
-    clip: rect(86px, 1000px, 114px, 0); } }
+    clip: rect(89px, 1500px, 58px, 0); } }
 
 @keyframes glitch-anim-2 {
   0% {
-    clip: rect(5px, 1000px, 41px, 0); }
+    clip: rect(107px, 1500px, 90px, 0); }
   8.3333333333% {
-    clip: rect(115px, 1000px, 22px, 0); }
+    clip: rect(59px, 1500px, 3px, 0); }
   16.6666666667% {
-    clip: rect(108px, 1000px, 53px, 0); }
+    clip: rect(105px, 1500px, 51px, 0); }
   25% {
-    clip: rect(8px, 1000px, 27px, 0); }
+    clip: rect(115px, 1500px, 21px, 0); }
   33.3333333333% {
-    clip: rect(38px, 1000px, 90px, 0); }
+    clip: rect(88px, 1500px, 26px, 0); }
   41.6666666667% {
-    clip: rect(75px, 1000px, 21px, 0); }
+    clip: rect(42px, 1500px, 95px, 0); }
   50% {
-    clip: rect(14px, 1000px, 111px, 0); }
+    clip: rect(92px, 1500px, 51px, 0); }
   58.3333333333% {
-    clip: rect(76px, 1000px, 50px, 0); }
+    clip: rect(105px, 1500px, 1px, 0); }
   66.6666666667% {
-    clip: rect(26px, 1000px, 9px, 0); }
+    clip: rect(13px, 1500px, 40px, 0); }
   75% {
-    clip: rect(38px, 1000px, 106px, 0); }
+    clip: rect(83px, 1500px, 107px, 0); }
   83.3333333333% {
-    clip: rect(101px, 1000px, 53px, 0); }
+    clip: rect(109px, 1500px, 49px, 0); }
   91.6666666667% {
-    clip: rect(76px, 1000px, 46px, 0); }
+    clip: rect(86px, 1500px, 36px, 0); }
   100% {
-    clip: rect(31px, 1000px, 12px, 0); } }
+    clip: rect(72px, 1500px, 77px, 0); } }
     header #glitch:before, header #glitch:after {
       content: attr(data-text);
       position: absolute;
@@ -128,7 +128,8 @@ main .hackframe {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0; }
+  top: 0;
+  left: 0; }
 
 #canvas {
   z-index: 500;
@@ -149,7 +150,7 @@ main .hackframe {
   color: black;
   vertical-align: middle; }
 
-button {
+button, #stophack {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -162,8 +163,22 @@ button {
   font-size: 16pt;
   padding: 0.5em;
   cursor: pointer; }
-  button:hover {
+  button:hover, #stophack:hover {
     background: white;
     color: #0c0c0c; }
-  button:focus {
+  button:focus, #stophack:focus {
     outline: 0; }
+
+#stophack {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  top: 90%;
+  border: 2px solid mediumspringgreen;
+  color: mediumspringgreen;
+  display: none;
+  z-index: 9999; }
+  #stophack:hover {
+    background: mediumspringgreen; }

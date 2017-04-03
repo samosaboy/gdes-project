@@ -1,26 +1,31 @@
 var video = document.getElementById('video'),
     hackbutton = document.getElementById('hack'),
+    stophackbutton = document.getElementById('stophack'),
     bgcanvas = document.getElementById('bgcamera'),
     bar = document.getElementById('bar'),
     progress = document.getElementById('progress'),
     ipbox = document.getElementById('glitch'),
+    hackon = document.getElementById('hackon'),
+    hackoff = document.getElementById('hackoff'),
     userip;
 
 hackbutton.addEventListener('click', function startCamera() {
 
     var width = 1,
-        id = setInterval(frame, 45);
+        id = setInterval(frame, 1);
 
     function frame() {
         if (width >= 100) {
 
             progress.style.display = 'none';
-            hackbutton.style.display = 'none';
             clearInterval(id);
 
         } if (width === 100) {
 
             setTimeout(function () {
+
+                hackbutton.style.display = 'none';
+                stophackbutton.style.display = 'block';
 
                 ipbox.innerHTML = 'IP:' + userip;
                 ipbox.style.display = 'block';
@@ -63,8 +68,8 @@ hackbutton.addEventListener('click', function startCamera() {
                             context.clearRect(0, 0, window.innerWidth, window.innerHeight);
                             var corners = event.data;
                             for (var i = 0; i < corners.length; i += 2) {
-                                context.fillStyle = '#f00';
-                                context.fillRect(corners[i], corners[i + 1], 2, 2);
+                                context.fillStyle = '#ff3949';
+                                context.fillRect(corners[i], corners[i + 1], 1, 1);
                             }
                         });
 
@@ -111,6 +116,12 @@ hackbutton.addEventListener('click', function startCamera() {
                 }
 
                 maincamera();
+
+                stophackbutton.onclick = function () {
+
+                    hackbutton.removeEventListener('click', startCamera());
+                    console.log('test');
+                }
 
             }, 1000);
 
