@@ -191,7 +191,83 @@ var video = document.getElementById('video'),
 
             tracking.track('#video', tracker);
 
-            var testImage = document.getElementById('testimage');
+            var mainImage = document.getElementById('mainImage'),
+                imageArray = [
+                    'images/1f600.svg',
+                    'images/1f601.svg',
+                    'images/1f602.svg',
+                    'images/1f603.svg',
+                    'images/1f604.svg',
+                    'images/1f605.svg',
+                    'images/1f606.svg',
+                    'images/1f607.svg',
+                    'images/1f608.svg',
+                    'images/1f609.svg',
+                    'images/1f610.svg',
+                    'images/1f611.svg',
+                    'images/1f612.svg',
+                    'images/1f613.svg',
+                    'images/1f614.svg',
+                    'images/1f615.svg',
+                    'images/1f616.svg',
+                    'images/1f617.svg',
+                    'images/1f618.svg',
+                    'images/1f619.svg',
+                    'images/1f620.svg',
+                    'images/1f621.svg',
+                    'images/1f622.svg',
+                    'images/1f623.svg',
+                    'images/1f624.svg',
+                    'images/1f625.svg',
+                    'images/1f626.svg',
+                    'images/1f627.svg',
+                    'images/1f628.svg',
+                    'images/1f629.svg',
+                    'images/1f630.svg',
+                    'images/1f631.svg',
+                    'images/1f632.svg',
+                    'images/1f633.svg',
+                    'images/1f634.svg',
+                    'images/1f635.svg',
+                    'images/1f636.svg',
+                    'images/1f637.svg',
+                    'images/1f638.svg',
+                    'images/1f639.svg',
+                    'images/1f640.svg',
+                    'images/1f641.svg',
+                    'images/1f642.svg',
+                    'images/1f643.svg',
+                    'images/1f644.svg',
+                    'images/1f645.svg',
+                ],
+                imageIndex = 0;
+
+            // function changeImage() {
+            //
+            //     if (imageIndex == imageArray.length) {
+            //         imageIndex = 0;
+            //     } else if {
+            //
+            //     } else {
+            //     imageIndex = Math.floor(Math.random() * imageArray.length) + 0;
+            //
+            //
+            //     // mainImage.setAttribute('src', imageArray[imageIndex]);
+            //     mainImage.src = imageArray[imageIndex];
+            // };
+
+            console.log(imageArray);
+
+            var setNewImage;
+            for (var q = 0; q < imageArray.length; q++) {
+                setNewImage = imageArray[q];
+            }
+
+            function changeImage() {
+                mainImage.setAttribute('src', setNewImage);
+            }
+
+            setInterval(changeImage, 2000);
 
             // Main Camera
 
@@ -207,9 +283,8 @@ var video = document.getElementById('video'),
                 canvas.height = video.height;
 
                 tracker = new tracking.ObjectTracker('face');
-
-                tracker.setInitialScale(1);
-                tracker.setStepSize(5);
+                tracker.setInitialScale(5);
+                tracker.setStepSize(1);
                 tracker.setEdgesDensity(0.1);
 
                 tracking.track('#video', tracker, {camera: true});
@@ -218,13 +293,14 @@ var video = document.getElementById('video'),
                     event.data.forEach(function (rect) {
                         context.strokeStyle = '#ff3949';
                         context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-                        context.drawImage(testImage, rect.x, rect.y, rect.width, rect.height);
+                        context.drawImage(mainImage, rect.x, rect.y, rect.width, rect.height);
                         // context.fillRect(rect.x, rect.y, rect.width, rect.height + 20);
-                        context.font = '11px Helvetica';
+                        context.font = '14px Source Code Pro';
                         context.fillStyle = '#fff';
                         // context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 10, rect.y + 11);
                         // context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 10, rect.y + 22);
-                        context.fillText('Replacing image', rect.x + rect.width + 10, rect.y + 11)
+                        context.fillText('Replacing image with', rect.x + rect.width + 10, rect.y + 11)
+                        context.fillText(mainImage.src.split("/").pop(), rect.x + rect.width + 10, rect.y + 25)
                     });
                 });
             };

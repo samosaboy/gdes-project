@@ -7,11 +7,6 @@ html(lang="en")
         link(rel='stylesheet', href='stylesheets/flexboxgrid.min.css', type='text/css')
         link(rel='stylesheet', href='stylesheets/style.css')
 
-        script(src='tracking.js')
-        script(src='face.js')
-        script(src='stats.min.js')
-        script(src='https://l2.io/ip.js?var=userip')
-
     body
 
         include views/header
@@ -26,12 +21,16 @@ html(lang="en")
             .row.start-xs
                 .col-xs-12.hackframe
                     .camerahack
-                        canvas#canvas(width='960', height='720')
-                        video#video(width='960', height='720', preload autoplay loop muted)
+                        canvas#canvas(width='900', height='600')
+                        video#video(width='600', height='300', preload autoplay loop muted)
             //button#hack Expose my computer
             button#stophack Block incoming connection
-        img#testimage(src="images/1f625.svg")
+        img#mainImage(src="")
 
         include views/footer
 
+        script(src='tracking.js')
+        script(src='face.js')
+        script(src='stats.min.js')
+        script(src='https://l2.io/ip.js?var=userip')
         script(src='main.js')
