@@ -164,6 +164,20 @@ main {
   vertical-align: middle;
 }
 
+#stats {
+  top: 10px !important;
+  [style] {
+    color: rgba(255, 57, 73, 1.0) !important;
+  }
+  span[style] {
+    background-color: none !important;
+  }
+}
+
+#msGraph[style] {
+  background-color: rgba(255, 57, 73, 1.0) !important;
+}
+
 button, #stophack {
   @include centerer;
   background: none;
@@ -198,4 +212,65 @@ button, #stophack {
     background: mediumspringgreen;
   }
 
+}
+
+.terminal {
+  position: absolute;
+  top: 5%;
+  color: lightgreen;
+  font-size: 14pt;
+  font-weight: 400;
+  width: 100%;
+}
+
+.terminalinput {
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 14pt;
+  background: none;
+  color: lightgreen;
+  font-weight: 800;
+  border: 0;
+  outline: none;
+  width: 60%;
+
+  :focus {
+    outline: none;
+  }
+}
+
+.enter {
+  display: block;
+  margin-top: 1em;
+}
+
+#typed {
+  color: lightgreen;
+  box-shadow: -5px 00 lightgreen;
+}
+
+.red {
+  color: red;
+  box-shadow: -5px 00 red;
+}
+
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
 }

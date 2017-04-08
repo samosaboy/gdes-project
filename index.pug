@@ -15,22 +15,35 @@ html(lang="en")
             #bar
 
         canvas#bgcanvas
-        //video#bgvideo
-
         main#hackon.container-fluid
             .row.start-xs
                 .col-xs-12.hackframe
                     .camerahack
                         canvas#canvas(width='900', height='600')
                         video#video(width='600', height='300', preload autoplay loop muted)
-            //button#hack Expose my computer
-            button#stophack Block incoming connection
-        img#mainImage(src="")
 
+            #terminal
+                p
+                    | #[br] Last Login: Today on ttys001
+                    | #[br] Internet connection through OCAD U WiFi
+                    | #[br] USR: 23***** PASS: H4X3RL33T
+                    | #[br] Security Level % ~~ PERCENT %
+                    span.red #[br] WARNING: YOUR LAPTOP HAS BEEN BREACHED #[br] WARNING: ACCOUNT SECURITY AT RISK #[br] WARNING: FILE SYSTEM HAS BEEN ENCRYPTED
+                    | #[br] Type `allow computer access` to continue
+
+            #start.terminal.col-xs-12
+                span#typed
+                .enter
+                    #log
+                    label(for='terminalinputstart') >
+                    input#terminalinputstart.terminalinput(type='text', name='inputstuff' autofocus)
+            //button#hack Expose my computer
+            //button#stophack Block incoming connectiom
         include views/footer
 
         script(src='tracking.js')
         script(src='face.js')
         script(src='stats.min.js')
+        script(src='typed.min.js')
         script(src='https://l2.io/ip.js?var=userip')
         script(src='main.js')
