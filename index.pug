@@ -16,22 +16,22 @@ html(lang="en")
 
         include views/header
 
-        div#progress
-            div#bar
+        #progress
+            #bar
 
         canvas#bgcanvas
         //video#bgvideo
 
         main#hackon.container-fluid
-            div.row.start-xs
-                div.col-xs-12.hackframe
-                    div.camerahack
+            .row.start-xs
+                .col-xs-12.hackframe
+                    .camerahack
                         canvas#canvas(width='960', height='720')
                         video#video(width='960', height='720', preload autoplay loop muted)
-            button#hack Expose my computer
+            //button#hack Expose my computer
             button#stophack Block incoming connection
+        img#testimage(src="images/1f625.svg")
 
         include views/footer
 
-        script(src='//localhost:35729/livereload.js')
         script(src='main.js')
