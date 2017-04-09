@@ -13,13 +13,13 @@ module.exports = function(grunt) {
         pug: {
             compile: {
                 options: {
-                    data: {
+                    data: [{
                         debug: false,
                         pretty: true
-                    }
+                    }]
                 },
                 files: [{
-                    src: '*.pug',
+                    src: ['*.pug'],
                     dest: 'public/',
                     expand: true,
                     ext: '.html'
