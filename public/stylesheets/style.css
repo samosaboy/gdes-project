@@ -27,6 +27,9 @@ body, html {
   color: #ffffff;
   height: 100%; }
 
+#why {
+  overflow-y: scroll; }
+
 .container {
   margin: 0 0 0 2em; }
 
@@ -273,6 +276,6 @@ button, #stophack {
 
 footer {
   color: dimgray;
-  margin: 2em 0 0 2em; }
+  margin: 2em 0 2em 2em; }
   footer a {
     color: dimgray; }

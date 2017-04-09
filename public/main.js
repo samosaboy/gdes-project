@@ -25,8 +25,8 @@ terminalInput.onkeypress = function(e){
 
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
-    // if (keyCode == '13' && terminalInput.value === 'allow computer access'){
-    if (keyCode == '13' && terminalInput.value === 'a'){
+    if (keyCode == '13' && terminalInput.value === 'allow computer access'){
+    // if (keyCode == '13' && terminalInput.value === 'a'){
 
         bar.style.display = 'block';
 
