@@ -1,12 +1,11 @@
 var video = document.getElementById('video'),
-    hackbutton = document.getElementById('hack'),
-    stophackbutton = document.getElementById('stophack'),
     bar = document.getElementById('bar'),
     progress = document.getElementById('progress'),
-    ipbox = document.getElementById('glitch'),
     terminalInput = document.getElementById('terminalinputstart'),
+    terminalInputEnd = document.getElementById('terminalinputend'),
     terminalLog = document.getElementById('log'),
     startTerminal = document.getElementById('start'),
+    endTerminal = document.getElementById('end'),
     userip;
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -18,17 +17,23 @@ document.addEventListener('DOMContentLoaded', function(){
         showCursor: false,
         cursorChar: '|'
     });
+    bar.style.display = 'none';
+    endTerminal.style.display = 'none';
 });
 
 terminalInput.onkeypress = function(e){
+
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
-    if (keyCode == '13' && terminalInput.value === 'allow computer access'){
+    // if (keyCode == '13' && terminalInput.value === 'allow computer access'){
+    if (keyCode == '13' && terminalInput.value === 'a'){
 
-        startTerminal.innerHTML = '';
+        bar.style.display = 'block';
+
+        startTerminal.innerHTML = 'loading program...';
 
         var width = 1,
-            id = setInterval(frame, 0.01);
+            id = setInterval(frame, 20);
 
         function frame() {
             if (width >= 100) {
@@ -39,11 +44,25 @@ terminalInput.onkeypress = function(e){
             }
             if (width === 100) {
 
-                // hackbutton.style.display = 'none';
-                // stophackbutton.style.display = 'block';
+                startTerminal.innerHTML = '<p>initialized!</p>' + '<p>IP:' + userip + '</p>';
+                startTerminal.classList += ' aftertype';
 
-                ipbox.innerHTML = 'IP:' + userip;
-                ipbox.style.display = 'block';
+                var newInputText = Typed.new('#finishedText', {
+                    strings: ['<p>Your device security has been compromised. Identity protection status: ON</p><br/><p>Type "continue" to secure computer</p>'],
+                    typeSpeed: 0.01,
+                    backDelay: 15500000,
+                    loop: false,
+                    showCursor: false,
+                    cursorChar: '|'
+                });
+
+                endTerminal.style.display = 'block';
+
+                terminalInputEnd.onkeypress = function(e) {
+                    if (keyCode == '13' && terminalInputEnd.value === 'continue') {
+                        window.location.href = '/why';
+                    }
+                }
 
                 // Pixelated Camera
 
@@ -57,7 +76,7 @@ terminalInput.onkeypress = function(e){
                 tracking.inherits(FastTracker, tracking.Tracker);
 
                 // tracking.Fast.THRESHOLD = 2;
-                FastTracker.prototype.threshold = tracking.Fast.THRESHOLD = 5;
+                FastTracker.prototype.threshold = tracking.Fast.THRESHOLD = 10;
 
                 FastTracker.prototype.track = function (pixels, width, height) {
                     stats.begin();
@@ -75,7 +94,7 @@ terminalInput.onkeypress = function(e){
                     var corners = event.data;
                     for (var i = 0; i < corners.length; i += 3) {
                         context.fillStyle = '#ff3949';
-                        context.fillRect(corners[i] - 100, corners[i + 1] - 100, 1.5, 1.5);
+                        context.fillRect(corners[i] - 100, corners[i + 1] - 100, 0.5, 0.5);
                     }
                 });
 
@@ -143,8 +162,8 @@ terminalInput.onkeypress = function(e){
                     var canvas = document.getElementById('canvas'),
                         context = canvas.getContext('2d');
 
-                    video.width = window.innerWidth / 2;
-                    video.height = window.innerHeight / 2;
+                    video.width = window.innerWidth / 3;
+                    video.height = window.innerHeight / 3;
 
                     canvas.width = video.width;
                     canvas.height = video.height;
@@ -161,10 +180,10 @@ terminalInput.onkeypress = function(e){
                             context.strokeStyle = '#ff3949';
                             context.strokeRect(rect.x, rect.y, rect.width, rect.height);
                             context.drawImage(mainImage, rect.x, rect.y, rect.width, rect.height);
-                            context.font = '14px Source Code Pro';
-                            context.fillStyle = '#fff';
-                            context.fillText('Replacing image with', rect.x + rect.width + 10, rect.y + 11)
-                            context.fillText(mainImage.src.split("/").pop(), rect.x + rect.width + 10, rect.y + 25)
+                            // context.font = '8px Source Code Pro';
+                            // context.fillStyle = '#fff';
+                            // context.fillText('Replacing image with', rect.x + rect.width + 10, rect.y + 11)
+                            // context.fillText(mainImage.src.split("/").pop(), rect.x + rect.width + 10, rect.y + 25)
                         });
                     });
                 };
@@ -178,14 +197,11 @@ terminalInput.onkeypress = function(e){
             } else {
                 width++;
                 bar.style.width = width + '%';
-                // hackbutton.innerHTML = 'Exposing: ' + width + '%';
-
             }
         }
 
         return false;
-    }
-    if (keyCode == '13' && terminalInput.value != 'allow computer access') {
+    } if (keyCode == '13' && terminalInput.value != 'allow computer access') {
         terminalLog.innerHTML += '<br /> -bash#usr@pwn: `' + terminalInput.value + '` is not a valid command'
         terminalInput.value = '';
     }

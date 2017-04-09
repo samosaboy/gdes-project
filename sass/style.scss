@@ -98,28 +98,20 @@ body, html {
   height: 100%;
 }
 
-header {
-  margin: 11% 0 0 0;
-
-  #glitch {
-    display:  none;
-    @include textGlitch("glitch", 12, white, $bgcolor, red, blue, 1500, 115);
-    text-align: center;
-    font-size: 35pt;
-  }
-}
-
 main {
+  height: 100%;
+
   .hackframe {
     text-align: center;
 
     .camerahack {
       display: block;
-      margin: 0 auto;
-      width: 960px;
-      height: 720px;
+      //width: 960px;
+      //height: 720px;
       position: relative;
-      z-index: 999;
+      z-index: 0;
+      margin: 0 auto;
+      @include centerer;
 
     }
   }
@@ -147,6 +139,10 @@ main {
   position: absolute;
 }
 
+#video, #canvas {
+  transform: scale(3.5);
+}
+
 #progress {
   width: 100%;
   height: 100%;
@@ -159,9 +155,12 @@ main {
   width: 0%;
   height: 100vh;
   background-color: red;
-  text-align: center;
-  color: black;
+  text-align: left;
+  color: white;
   vertical-align: middle;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0;
 }
 
 #stats {
@@ -220,7 +219,7 @@ button, #stophack {
   color: lightgreen;
   font-size: 14pt;
   font-weight: 400;
-  width: 100%;
+  text-shadow: 0 0 1px , 0 0 1px, 0 0 1px , 0 0 1px;
 }
 
 .terminalinput {
@@ -231,7 +230,8 @@ button, #stophack {
   font-weight: 800;
   border: 0;
   outline: none;
-  width: 60%;
+  width: 80vw;
+  text-shadow: 0 0 1px , 0 0 1px, 0 0 1px , 0 0 1px;
 
   :focus {
     outline: none;
@@ -245,20 +245,76 @@ button, #stophack {
 
 #typed {
   color: lightgreen;
-  box-shadow: -5px 00 lightgreen;
+  box-shadow: -5px -1px 1px lightgreen;
 }
 
 .red {
   color: red;
-  box-shadow: -5px 00 red;
+  box-shadow: -5px -1px 1px red;
+}
+
+.aftertype {
+  width: 100%;
+  color: white;
+
+  p {
+    background: green;
+    position: absolute;
+    display: block;
+    width: initial;
+    color: white;
+    font-weight: 800;
+    padding: 1px 6px;
+    text-shadow: 0 0 0.1px , 0 0 0.1px, 0 0 0.1px , 0 0 0.1px;
+
+    &:last-of-type {
+      background: red;
+      position: absolute;
+      right: 5%;
+      color: white;
+    }
+  }
+}
+
+#end {
+  position: absolute;
+  bottom: 5%;
+  display: block;
+  width: initial;
+
+  label {
+    color: green;
+    -webkit-animation: blink 1.5s infinite;
+    -moz-animation: blink 1.5s infinite;
+    animation: blink 1.5s infinite;
+  }
+
+  input {
+    background: none;
+    border-bottom: 2px solid green;
+    text-shadow: none;
+  }
+}
+
+#finishedText {
+  font-weight: 400;
+  p {
+    display: inline;
+    margin: 0;
+    background: red;
+    color: white;
+    padding: 1px 6px;
+    text-shadow: 0 0 0.1px, 0 0 0.1px, 0 0 0.1px, 0 0 0.1px;
+  }
 }
 
 .typed-cursor{
   opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
-  animation: blink 0.7s infinite;
+  -webkit-animation: blink 1.5s infinite;
+  -moz-animation: blink 1.5s infinite;
+  animation: blink 1.5s infinite;
 }
+
 @keyframes blink{
   0% { opacity:1; }
   50% { opacity:0; }

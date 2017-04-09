@@ -6,6 +6,7 @@ var path = require('path');
 //Routes
 app.get('/', function(req, res) {
     res.render('index', { title: 'Welcome' });
+    res.render('why', { title: 'Why should you care?' });
 });
 app.set('views', path.join(__dirname));
 app.set('view engine', 'pug');

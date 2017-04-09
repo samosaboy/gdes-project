@@ -26,96 +26,19 @@ body, html {
   color: #ffffff;
   height: 100%; }
 
-header {
-  margin: 11% 0 0 0; }
-  header #glitch {
-    display: none;
-    color: white;
-    position: relative;
-    text-align: center;
-    font-size: 35pt; }
-
-@keyframes glitch-anim-1 {
-  0% {
-    clip: rect(68px, 1500px, 37px, 0); }
-  8.3333333333% {
-    clip: rect(78px, 1500px, 61px, 0); }
-  16.6666666667% {
-    clip: rect(113px, 1500px, 11px, 0); }
-  25% {
-    clip: rect(38px, 1500px, 10px, 0); }
-  33.3333333333% {
-    clip: rect(105px, 1500px, 111px, 0); }
-  41.6666666667% {
-    clip: rect(45px, 1500px, 21px, 0); }
-  50% {
-    clip: rect(14px, 1500px, 27px, 0); }
-  58.3333333333% {
-    clip: rect(56px, 1500px, 32px, 0); }
-  66.6666666667% {
-    clip: rect(37px, 1500px, 30px, 0); }
-  75% {
-    clip: rect(23px, 1500px, 89px, 0); }
-  83.3333333333% {
-    clip: rect(43px, 1500px, 10px, 0); }
-  91.6666666667% {
-    clip: rect(21px, 1500px, 19px, 0); }
-  100% {
-    clip: rect(22px, 1500px, 111px, 0); } }
-
-@keyframes glitch-anim-2 {
-  0% {
-    clip: rect(70px, 1500px, 74px, 0); }
-  8.3333333333% {
-    clip: rect(106px, 1500px, 108px, 0); }
-  16.6666666667% {
-    clip: rect(99px, 1500px, 81px, 0); }
-  25% {
-    clip: rect(96px, 1500px, 89px, 0); }
-  33.3333333333% {
-    clip: rect(30px, 1500px, 107px, 0); }
-  41.6666666667% {
-    clip: rect(49px, 1500px, 43px, 0); }
-  50% {
-    clip: rect(57px, 1500px, 22px, 0); }
-  58.3333333333% {
-    clip: rect(69px, 1500px, 97px, 0); }
-  66.6666666667% {
-    clip: rect(98px, 1500px, 81px, 0); }
-  75% {
-    clip: rect(44px, 1500px, 105px, 0); }
-  83.3333333333% {
-    clip: rect(72px, 1500px, 93px, 0); }
-  91.6666666667% {
-    clip: rect(2px, 1500px, 13px, 0); }
-  100% {
-    clip: rect(22px, 1500px, 11px, 0); } }
-    header #glitch:before, header #glitch:after {
-      content: attr(data-text);
+main {
+  height: 100%; }
+  main .hackframe {
+    text-align: center; }
+    main .hackframe .camerahack {
+      display: block;
+      position: relative;
+      z-index: 0;
+      margin: 0 auto;
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #0c0c0c;
-      clip: rect(0, 0, 0, 0); }
-    header #glitch:after {
-      left: 2px;
-      text-shadow: -1px 0 red;
-      animation: glitch-anim-1 2s infinite linear alternate-reverse; }
-    header #glitch:before {
-      left: -2px;
-      text-shadow: 2px 0 blue;
-      animation: glitch-anim-2 3s infinite linear alternate-reverse; }
-
-main .hackframe {
-  text-align: center; }
-  main .hackframe .camerahack {
-    display: block;
-    margin: 0 auto;
-    width: 960px;
-    height: 720px;
-    position: relative;
-    z-index: 999; }
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
 #hack {
   position: absolute;
@@ -135,6 +58,9 @@ main .hackframe {
   z-index: 500;
   position: absolute; }
 
+#video, #canvas {
+  transform: scale(3.5); }
+
 #progress {
   width: 100%;
   height: 100%;
@@ -146,9 +72,12 @@ main .hackframe {
   width: 0%;
   height: 100vh;
   background-color: red;
-  text-align: center;
-  color: black;
-  vertical-align: middle; }
+  text-align: left;
+  color: white;
+  vertical-align: middle;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0; }
 
 #stats {
   top: 10px !important; }
@@ -199,7 +128,7 @@ button, #stophack {
   color: lightgreen;
   font-size: 14pt;
   font-weight: 400;
-  width: 100%; }
+  text-shadow: 0 0 1px , 0 0 1px, 0 0 1px , 0 0 1px; }
 
 .terminalinput {
   font-family: 'Source Code Pro', sans-serif;
@@ -209,7 +138,8 @@ button, #stophack {
   font-weight: 800;
   border: 0;
   outline: none;
-  width: 60%; }
+  width: 80vw;
+  text-shadow: 0 0 1px , 0 0 1px, 0 0 1px , 0 0 1px; }
   .terminalinput :focus {
     outline: none; }
 
@@ -219,17 +149,60 @@ button, #stophack {
 
 #typed {
   color: lightgreen;
-  box-shadow: -5px 00 lightgreen; }
+  box-shadow: -5px -1px 1px lightgreen; }
 
 .red {
   color: red;
-  box-shadow: -5px 00 red; }
+  box-shadow: -5px -1px 1px red; }
+
+.aftertype {
+  width: 100%;
+  color: white; }
+  .aftertype p {
+    background: green;
+    position: absolute;
+    display: block;
+    width: initial;
+    color: white;
+    font-weight: 800;
+    padding: 1px 6px;
+    text-shadow: 0 0 0.1px , 0 0 0.1px, 0 0 0.1px , 0 0 0.1px; }
+    .aftertype p:last-of-type {
+      background: red;
+      position: absolute;
+      right: 5%;
+      color: white; }
+
+#end {
+  position: absolute;
+  bottom: 5%;
+  display: block;
+  width: initial; }
+  #end label {
+    color: green;
+    -webkit-animation: blink 1.5s infinite;
+    -moz-animation: blink 1.5s infinite;
+    animation: blink 1.5s infinite; }
+  #end input {
+    background: none;
+    border-bottom: 2px solid green;
+    text-shadow: none; }
+
+#finishedText {
+  font-weight: 400; }
+  #finishedText p {
+    display: inline;
+    margin: 0;
+    background: red;
+    color: white;
+    padding: 1px 6px;
+    text-shadow: 0 0 0.1px, 0 0 0.1px, 0 0 0.1px, 0 0 0.1px; }
 
 .typed-cursor {
   opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
-  animation: blink 0.7s infinite; }
+  -webkit-animation: blink 1.5s infinite;
+  -moz-animation: blink 1.5s infinite;
+  animation: blink 1.5s infinite; }
 
 @keyframes blink {
   0% {
