@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(charset='utf-8')
+        title= title
+        link(rel='stylesheet', href='stylesheets/flexboxgrid.min.css', type='text/css')
+        link(rel='stylesheet', href='stylesheets/style.css')
+
+    body
+
+        include views/header
+
+        .container
+            #typed
+                p.large
+                    | We live in a society where privacy invasion is undervalued. Why should you care that it is possible for
+                    | hackers, governments and organizations to gain access to your personal life? Your text messages, your browser history, your
+                    | digital identity will be found, monitored and used against you or sold for the benefit of others.
+                    | This constant monitoring of your personal life will change how you act.
+                    | #[br]
+                    span.red #[br] Imagine the fear invoked on you as you know someone is out there who knows what you write on your private Twitter. Imagine how you would hesitate to express your personal opinions over Facebook because you know it could be used against you.
+                    | #[br]
+                    | #[br] Imagine your digital privacy being the same as the privacy of your own home. Most lawful citizens do not have anything to hide from the government.
+                    | So why should you give them free access to your house? Would you let the government install hidden cameras around your house?
+                    | #[br]
+                    | #[br] Here are steps you can take right now to educate yourself about this and hide your online presence.
+
+            .row.educated
+                .col-xs-12
+                    h3 Use a VPN service
+                    | Virtual Private Networks are indispensable in protecting your privacy. A simple click of a button
+                    | will more or less make your identity hard to trace. VPN services are generally a yearly fee of about
+                    | $40, but the convenience and ease of just a button is much favourable for many. Research the VPN that is
+                    | right for you. It takes a bit of your time but you will learn how valuable your digital privacy is.
+                .col-xs-12
+                    h3 Use browser extensions
+                    | All modern browsers are capable of supporting extensions. Extensions are plugins that companies and users can create
+                    | for a specific purpose. Here are some great plugins you can install to stay protected.
+                    .row.margin-25-top
+                        .col-xs-4
+                            a(href='https://github.com/gorhill/uBlock')
+                                h4 uBlock Origin
+                                | The most efficient blocker for ads, scripts and third party network request.
+                        .col-xs-4
+                            a(href='https://www.ghostery.com/')
+                                h4 Ghostery
+                                | Automatically blocks tracking technologies that websites use to sell your data.
+                        .col-xs-4
+                            a(href='https://github.com/andryou/scriptsafe')
+                                h4 ScriptSafe
+                                | Secure browsing through removing risky content from web pages such as embedded script tags.
+                        .col-xs-12.margin-25-top There are more solutions out there such as protesting against government bills,
+                            | emailing your provincial representatives and raising awareness about this issue between your friends and family.
+                        .col-xs-12.margin-25-top
+                            button.restart(onclick="window.location.href='/'") Go back to the beginning
+
+        include views/footer
+
+        script(src='typed.min.js')
+        script(src='why.js')

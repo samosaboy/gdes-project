@@ -6,6 +6,8 @@ var path = require('path');
 //Routes
 app.get('/', function(req, res) {
     res.render('index', { title: 'Welcome' });
+});
+app.get('/why', function(req, res) {
     res.render('why', { title: 'Why should you care?' });
 });
 app.set('views', path.join(__dirname));

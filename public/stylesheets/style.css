@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700");
 /*
   (TEXT) PARAMS
   =================
@@ -25,6 +26,9 @@ body, html {
   background: #0c0c0c;
   color: #ffffff;
   height: 100%; }
+
+.container {
+  margin: 0 0 0 2em; }
 
 main {
   height: 100%; }
@@ -227,3 +231,48 @@ button, #stophack {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+.educated {
+  border-top: white;
+  font-family: 'Karla', sans-serif;
+  display: block;
+  font-size: 15pt;
+  color: white; }
+  .educated h4 {
+    margin: 0; }
+  .educated a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    outline: 2px solid white; }
+    .educated a:hover {
+      outline: 2px solid lightgreen;
+      color: lightgreen; }
+  .educated button {
+    display: block;
+    position: relative;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    left: 0;
+    top: 0;
+    color: red;
+    border: 2px solid red; }
+    .educated button:hover {
+      background: red;
+      color: black; }
+
+.large {
+  font-size: 15pt; }
+
+.margin-25-top {
+  margin-top: 25px; }
+
+footer {
+  color: dimgray;
+  margin: 2em 0 0 2em; }
+  footer a {
+    color: dimgray; }
